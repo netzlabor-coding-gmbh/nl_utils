@@ -1,0 +1,42 @@
+{
+    "modules": [],
+    "properties": {
+        "backendModules": [],
+        "description": "",
+        "emConf": {
+            "category": "misc",
+            "custom_category": "",
+            "dependsOn": "typo3 => 10.4.0-10.4.99\n",
+            "disableLocalization": true,
+            "disableVersioning": true,
+            "generateDocumentationTemplate": false,
+            "generateEditorConfig": true,
+            "generateEmptyGitRepository": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "10.4.0-10.4.99",
+            "version": "1.0.0"
+        },
+        "extensionKey": "nl_utils",
+        "name": "Utils",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [
+            {
+                "company": "netzlabor coding GmbH",
+                "email": "mxmchbn@gmail.com",
+                "name": "Maksym Chubin",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [],
+        "vendorName": "NL"
+    },
+    "wires": [],
+    "storagePath": "\/var\/www\/html\/packages\/",
+    "log": {
+        "last_modified": "2022-04-27 10:55",
+        "extension_builder_version": "10.0.3",
+        "be_user": " (1)"
+    }
+}
