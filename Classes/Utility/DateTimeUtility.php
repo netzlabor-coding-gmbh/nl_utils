@@ -1,8 +1,8 @@
 <?php
 
+declare(strict_types=1);
 
 namespace NL\NlUtils\Utility;
-
 
 class DateTimeUtility
 {
@@ -54,7 +54,7 @@ class DateTimeUtility
      */
     public static function year(\DateTime $dateTime = null): int
     {
-        return ($dateTime ?? self::now())->format('Y');
+        return (int) ($dateTime ?? self::now())->format('Y');
     }
 
     /**
@@ -71,7 +71,7 @@ class DateTimeUtility
      */
     public static function dayNumber(\DateTime $dateTime = null): int
     {
-        return ($dateTime ?? self::now())->format('N');
+        return (int) ($dateTime ?? self::now())->format('N');
     }
 
     /**

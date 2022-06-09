@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace NL\NlUtils\Utility;
 
 use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;

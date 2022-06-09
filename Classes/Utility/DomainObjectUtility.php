@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace NL\NlUtils\Utility;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject;
@@ -31,6 +33,23 @@ class DomainObjectUtility
         }
 
         return $properties;
+    }
+
+    /**
+     * @param iterable $objects
+     * @param string $as
+     * @param array $args
+     * @return array
+     */
+    public static function collectAs(iterable $objects, string $as, array $args = []): array
+    {
+        $values = [];
+
+        foreach ($objects as $object) {
+            $values[] = call_user_func_array([$object, 'to' . ucfirst($as)], $args);
+        }
+
+        return $values;
     }
 
     /**

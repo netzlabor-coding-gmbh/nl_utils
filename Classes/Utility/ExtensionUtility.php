@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace NL\NlUtils\Utility;
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
@@ -16,7 +18,7 @@ class ExtensionUtility
      * @param string|null $excludeList
      * @param string|null $addList
      */
-    public static function registerPlugin(string $extensionName, string $pluginName, ?string $excludeList = self::DEFAULT_EXCLUDE_LIST, ?string $addList = self::DEFAULT_INCLUDE_LIST)
+    public static function registerPlugin(string $extensionName, string $pluginName, ?string $excludeList = self::DEFAULT_EXCLUDE_LIST, ?string $addList = self::DEFAULT_INCLUDE_LIST): void
     {
         $extensionKey = self::getExtensionKey($extensionName);
         $pluginSignature = self::getPluginSignature($extensionName, $pluginName);
@@ -65,7 +67,7 @@ class ExtensionUtility
         string $pluginType = \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_PLUGIN,
         bool $addPageTSConfig = true,
         bool $registerIcon = true
-    )
+    ): void
     {
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
             $extensionName,
@@ -217,7 +219,7 @@ class ExtensionUtility
      * @param string $vendorName The vendor name to check
      * @param string $extensionName The extension name that is affected
      */
-    protected static function checkVendorNameFormat(string $vendorName, string $extensionName)
+    protected static function checkVendorNameFormat(string $vendorName, string $extensionName): void
     {
         if (preg_match('/^[A-Z]/', $vendorName) !== 1) {
             trigger_error('The vendor name from tx_' . $extensionName . ' must begin with a capital letter.', E_USER_DEPRECATED);
