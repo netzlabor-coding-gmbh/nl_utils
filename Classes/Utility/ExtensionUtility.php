@@ -94,7 +94,6 @@ class ExtensionUtility
     protected static function addPageTsConfig(string $extensionName, string $pluginName): void
     {
         $extensionKey = self::getExtensionKey($extensionName);
-        $pluginKey = self::getPluginKey($pluginName);
         $pluginSignature = self::getPluginSignature($extensionName, $pluginName);
         $iconIdentifier = self::getIconIdentifier($extensionName, $pluginName);
 
@@ -102,7 +101,7 @@ class ExtensionUtility
             "mod {
             wizards.newContentElement.wizardItems.plugins {
                 elements {
-                    $pluginKey {
+                    $pluginSignature {
                         iconIdentifier = $iconIdentifier
                         title = LLL:EXT:$extensionKey/Resources/Private/Language/locallang_db.xlf:tx_$pluginSignature.name
                         description = LLL:EXT:$extensionKey/Resources/Private/Language/locallang_db.xlf:tx_$pluginSignature.description
