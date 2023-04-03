@@ -74,28 +74,4 @@ abstract class Presenter implements Arrayable, Jsonable
     {
         return $this->toJson();
     }
-
-    /**
-     * Property overloading.
-     *
-     * @param string $name
-     * @return mixed
-     */
-    public function __get(string $name)
-    {
-        return $this->entity->$name;
-    }
-
-    /**
-     * Method overloading.
-     *
-     * @param string $method
-     * @param array $args
-     *
-     * @return mixed
-     */
-    public function __call(string $method, array $args)
-    {
-        return call_user_func_array([$this->entity, $method], $args);
-    }
 }
